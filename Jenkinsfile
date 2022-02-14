@@ -12,8 +12,7 @@ pipeline {
         always{
             cleanWs(deleteDirs: true,
                     disableDeferredWipeout: true,
-                    patterns: [[pattern: '.git', type: 'INCLUDE'],
-                               [pattern: '.propsfile', type: 'EXCLUDE']])
+                    patterns: [[pattern: '.git', type: 'EXCLUDE']])
         }
     }
 }
