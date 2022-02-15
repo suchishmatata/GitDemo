@@ -12,7 +12,7 @@ pipeline {
         always{
             cleanWs(deleteDirs: true,
                     disableDeferredWipeout: true,
-                    patterns: [[pattern: '.git|.txt', type: 'EXCLUDE']])
+                    patterns: [[pattern: 'node_modules', type: 'EXCLUDE'],[pattern: '/src/Economics/packages', type: 'EXCLUDE'])
         }
     }
 }
