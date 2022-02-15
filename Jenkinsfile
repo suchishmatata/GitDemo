@@ -30,8 +30,7 @@ pipeline {
            // Remove-Item c:\\tryremove\\* -exclude dontremove.txt
             cleanWs(patterns: [
 //                         [pattern: '.git/**', type: 'EXCLUDE'],
-                        [pattern: 'src/sample/packages/**', type: 'INCLUDE'],
-                        [pattern: 'src/**', type: 'EXCLUDE']
+                        [pattern: 'src/sample/packages/**', type: 'EXCLUDE']
 //                         [pattern: '${env.WORKSPACE}\\src\\sample\\node_modules\\**', type: 'EXCLUDE'],
 //                         [pattern: '${env.WORKSPACE}\\src\\sample\\packages\\**', type: 'EXCLUDE']
                     ])
