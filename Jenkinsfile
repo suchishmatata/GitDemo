@@ -10,7 +10,7 @@ pipeline {
     post
     {
         always{
-            bat """Del ${env.workspacePath} -exclude .git/** """
+            bat """Del "${env.workspacePath}" -exclude ".git/**" """
            // Remove-Item c:\\tryremove\\* -exclude dontremove.txt
 //             cleanWs(deleteDirs: true,
 //                     disableDeferredWipeout: true,
