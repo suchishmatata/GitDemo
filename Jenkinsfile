@@ -9,19 +9,19 @@ pipeline {
                 echo 'deployed'
             }
         }
-        stage('clean')
-        {
-            steps
-            {
-                script
-                {
-//                     def powerShellCommand = '.\\power.ps1'
-//                     def shellCommand = "powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -Command \"${powerShellCommand}\""
-//                     def process = shellCommand.execute()
-                    bat """Del "${env.WORKSPACE}\\*" -exclude ".git/**" -Confirm:\$false -Force"""
-                }
-            }
-        }
+//         stage('clean')
+//         {
+//             steps
+//             {
+//                 script
+//                 {
+// //                     def powerShellCommand = '.\\power.ps1'
+// //                     def shellCommand = "powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -Command \"${powerShellCommand}\""
+// //                     def process = shellCommand.execute()
+//                     bat """Del "${env.WORKSPACE}\\*" -exclude ".git/**" -Confirm:\$false -Force"""
+//                 }
+//             }
+//         }
     }
     post
     {
