@@ -28,10 +28,11 @@ pipeline {
         always{
 //             bat """Del "${env.WORKSPACE}\\*" -exclude ".git/**" -Confirm:\$false -Force"""
            // Remove-Item c:\\tryremove\\* -exclude dontremove.txt
-            cleanWs(deleteDirs: true,disableDeferredWipeout: true,
+            cleanWs(
                     patterns: [
 //                         [pattern: '.git/**', type: 'EXCLUDE'],
-                        [pattern: 'src/sample/packages/**', type: 'EXCLUDE']
+                        [pattern: 'src/sample/packages/**', type: 'EXCLUDE'],
+                        [pattern: 'src/sample/node_modules/**', type: 'EXCLUDE']
 //                         [pattern: '${env.WORKSPACE}\\src\\sample\\node_modules\\**', type: 'EXCLUDE'],
 //                         [pattern: '${env.WORKSPACE}\\src\\sample\\packages\\**', type: 'EXCLUDE']
                     ])
