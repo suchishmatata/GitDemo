@@ -7,5 +7,16 @@ pipeline {
             }
         }
     }
-    
+    post
+    {
+        always{
+            cleanWs(deleteDirs: true,
+                    disableDeferredWipeout: true,
+                    patterns: [
+                        [pattern: '.git/**', type: 'EXCLUDE'],
+                        [pattern: '**/node_modules/**', type: 'EXCLUDE'],
+                        [pattern: 'src/sample/packages/**', type: 'EXCLUDE']
+                    ])
+        }
+    }
 }
