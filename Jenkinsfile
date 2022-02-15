@@ -19,9 +19,11 @@ pipeline {
 //                         [pattern: '${env.WORKSPACE}\\src\\sample\\node_modules\\**', type: 'EXCLUDE'],
 //                         [pattern: '${env.WORKSPACE}\\src\\sample\\packages\\**', type: 'EXCLUDE']
 //                     ])
-            def powerShellCommand = '.\\power.ps1'
+            script{
+                def powerShellCommand = '.\\power.ps1'
     def shellCommand = "powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -Command \"${powerShellCommand}\""
     def process = shellCommand.execute()
+            }
         }
     }
 }
