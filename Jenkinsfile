@@ -10,13 +10,15 @@ pipeline {
     post
     {
         always{
-            cleanWs(deleteDirs: true,
-                    disableDeferredWipeout: true,
-                    patterns: [
-                        [pattern: '.git/**', type: 'EXCLUDE'],
-                        [pattern: '/src/sample/node_modules/**', type: 'EXCLUDE'],
-                        [pattern: '//src//sample//packages/**', type: 'EXCLUDE']
-                    ])
+            bat """Remove-Item ${env.workspacePath} -exclude .git/** """
+           // Remove-Item c:\\tryremove\\* -exclude dontremove.txt
+//             cleanWs(deleteDirs: true,
+//                     disableDeferredWipeout: true,
+//                     patterns: [
+//                         [pattern: '.git/**', type: 'EXCLUDE'],
+//                         [pattern: '/src/sample/node_modules/**', type: 'EXCLUDE'],
+//                         [pattern: '//src//sample//packages/**', type: 'EXCLUDE']
+//                     ])
         }
     }
 }
