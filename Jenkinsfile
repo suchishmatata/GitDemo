@@ -32,6 +32,7 @@ pipeline {
                     disableDeferredWipeout: true,
                     patterns: [
 //                         [pattern: '.git/**', type: 'EXCLUDE'],
+                        [pattern: 'src/**', type: 'EXCLUDE'],
                         [pattern: '${env.WORKSPACE}\\src\\sample\\node_modules\\**', type: 'EXCLUDE'],
                         [pattern: '${env.WORKSPACE}\\src\\sample\\packages\\**', type: 'EXCLUDE']
                     ])
